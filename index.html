@@ -1,4 +1,4 @@
-﻿<!-- This is the fifth build - Changed Grid IDs and Load Code -->
+﻿<!-- This is the sixth build - Loop the grunt code -->
 <!-- Author: Liam -->
 <!DOCTYPE html>
 <html>
@@ -15,23 +15,10 @@
             var col = 6;
             var grid = [];
 
-            for (let i = 0; i < row; i++) {
-                document.getElementById('B' + (i + 1)+'1').value = G[i];
-            }
-            for (let i = 0; i < row; i++) {
-                document.getElementById('B' + (i + 1)+'2').value = G[col+i];
-            }
-            for (let i = 0; i < row; i++) {
-                document.getElementById('B' + (i + 1)+'3').value = G[2 * col + i];
-            }
-            for (let i = 0; i < row; i++) {
-                document.getElementById('B' + (i + 1)+'4').value = G[3 * col + i];
-            }
-            for (let i = 0; i < row; i++) {
-                document.getElementById('B' + (i + 1)+'5').value = G[4 * col + i];
-            }
-            for (let i = 0; i < row; i++) {
-                document.getElementById('B' + (i + 1)+'6').value = G[5 * col + i];
+            for (let j = 0; j < row; j++) {
+                for (var i = 0; i < col; i++) {
+                    document.getElementById('B' + (i + 1)+(j+1)).value = G[j*col+i];
+                }
             }
         }
     </script>
