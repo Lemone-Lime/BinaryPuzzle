@@ -1,4 +1,4 @@
-﻿<!-- This is the eighth build V2 - Did minor change so the grid automatically loads -->
+﻿<!-- This is the ninth - Stubs stub stubs -->
 <!-- Author: Liam -->
 <!DOCTYPE html>
 <html>
@@ -40,12 +40,13 @@
         var G12 = [0, null, null, null, null, null, null, 1, 1, null, null, null, null, null, 1, null, null, null, null, null, null, 0, null, null, 0, null, null, 1, null, null, null, null, null, null, null, null];
         var G13 = [null, null, null, 1, null, null, null, null, null, null, null, 0, null, null, null, null, 0, 0, null, null, null, null, 1, null, 1, null, null, null, null, null, null, 0, null, 0, null, 0];
         var GT = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
+        var grid = [];
 
         function LoadGrid(G) {                    // sets the initial problem
             var row = 6;
             var col = 6;
-            var grid = [];
             var gridCol = [];
+            grid = [];
                 
              for (let j = 0; j < row; j++) { //Row loop - like the "y" coordinates
                 for (let i = 0; i < col; i++) { //Column loop - like the "x" coordinates
@@ -64,10 +65,21 @@
             }
         }
         function BinaryPuzzleSolver() {
-            window.alert('BinaryPuzzleSolver has not been coded yet');
+            let i = 0;
+            solved = false;
+            while ((i < 3) || (!solved)) {
+                solved = SolvePuzzle(grid);
+                window.alert('SolvePuzzle call number ' + i + '.');
+                i++;
+            }
         }
-        function SolvePuzzle() {
-            window.alert('SolvePuzzle has not been coded yet');
+        function SolvePuzzle(G2D) {
+            if (G2D[0][1] == 1) {
+                window.alert('Sub "Solve Puzzle" TEXT MSG ONLY - 1 in row 1 col 2 - "solved". ')
+                return true;
+            }
+            window.alert('Sub "Solve Puzzle" TEXT MSG ONLY - "Not Solved Yet"!')
+            return false;
         }
         function SolveNumberPairs() {
             window.alert('SolveNumberPairs has not been coded yet');
@@ -105,7 +117,7 @@
         </p>
         <br />
         <input type="button" value="Solve repeat" onclick ="BinaryPuzzleSolver()" />&nbsp;&nbsp;
-        <input type="button" value="Solve once" onclick ="SolvePuzzle()" />&nbsp;&nbsp; <br />
+        <input type="button" value="Solve once" onclick ="SolvePuzzle(grid)" />&nbsp;&nbsp; <br />
         <input type="button" value="Pairs" onclick ="SolveNumberPairs()" />&nbsp;&nbsp;
         <input type="button" value="RowPairs" onclick ="SolveRowPairs()" />&nbsp;&nbsp;
         <input type="button" value="ColPairs" onclick ="SolveColPairs()" />&nbsp;&nbsp;
