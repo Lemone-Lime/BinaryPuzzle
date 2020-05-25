@@ -1,4 +1,4 @@
-﻿<!-- This is the tenth build - Solve Row Pairs and Display Grid -->
+﻿<!-- This is the eleventh build - Solve Col Pairs -->
 <!-- Author: Liam -->
 <!DOCTYPE html>
 <html>
@@ -109,7 +109,24 @@
             DisplayGrid(grid);
         }
         function SolveColPairs() {
-            window.alert('SolveColPairs has not been coded yet');
+            gridSize = 6;
+
+            for (let col = 0; col < gridSize; col++) {
+                for (let row = 0; row < gridSize - 1; row++) {
+                    if (grid[row][col] !== null && grid[row][col] == grid[row+1][col]) {
+                        if (row > 0) {
+                            grid[row-1][col] = (1 - grid[row][col]);
+                        }
+                        if (row < gridSize - 2) {
+                            grid[row+2][col] = (1 - grid[row][col]);
+                        }
+                    }
+                }
+            }
+            document.getElementById('arrayView').value = grid;
+            document.getElementById('arrayViewCell').value = grid[4][3];
+
+            DisplayGrid(grid);
         }
         function SolveNumberTrios() {
             window.alert('SolveNumberTrios has not been coded yet');
